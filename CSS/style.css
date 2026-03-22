@@ -1,0 +1,184 @@
+:root {
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #475569;
+  --sidebar-hover-bg: #f1f5f9;
+  --active-bg: #eff6ff;
+  --active-text: #2563eb;
+}
+
+body.dark {
+  --sidebar-bg: #1e293b;
+  --sidebar-text: #94a3b8;
+  --sidebar-hover-bg: #334155;
+  --active-bg: #2563eb20;
+  --active-text: #60a5fa;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background: white;
+  padding: 20px;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.sidebar li {
+  color: var(--text-item);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.sidebar li.active {
+  background-color: var(--bg-active);
+  color: var(--text-active);
+}
+.sidebar li:hover {
+  background: #eee;
+}
+
+.sidebar .active {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+.topbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.topbar input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.topbar button {
+  padding: 10px 20px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 12px;
+  animation: fade 0.3s;
+}
+
+.task-card.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.task-check {
+  cursor: pointer;
+}
+
+.task-actions button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.progress {
+  height: 8px;
+  background: #ddd;
+  border-radius: 10px;
+}
+
+#progressFill {
+  height: 100%;
+  background: #2563eb;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark {
+    color: white;
+  --bg-sidebar: #1e293b;
+  --text-item: #94a3b8;
+  --bg-active: rgba(37, 99, 235, 0.2);
+  --text-active: #60a5fa;
+  background: var(--bg-sidebar);
+}
+body.dark .dark-btn:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+.dark-btn {
+    background: transparent;
+    border: 1px solid #334155;
+    padding: 4px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+body.dark .sidebar,
+body.dark .task-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .main {
+    padding: 15px;
+  }
+
+  .topbar {
+    flex-direction: column;
+  }
+}

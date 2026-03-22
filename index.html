@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusFlow</title>
+
+    <link rel="stylesheet" href="CSS/normalize.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>FocusFlow</h2>
+        <ul>
+          <li id="view-all" onclick="changeview('all')" class="active">Dashboard</li>
+          <li id="view-tasks" onclick="changeview('tasks')" >Tasks</li>
+          <li id="view-completed" onclick="changeview('completed')">Completed</li>
+        </ul>
+
+        <button class="dark-btn" onclick="toggleDark()">🌙 Mode</button>
+      </aside>
+
+      <main class="main">
+        <div class="topbar">
+          <input id="taskInput" placeholder="Add task..." />
+          <button onclick="addTask()">Add</button>
+        </div>
+
+        <div class="stats">Remaining: <span id="remaining">0</span></div>
+
+        <div class="progress">
+          <div id="progressFill"></div>
+        </div>
+        <p id="progressText">0%</p>
+
+        <div id="taskList"></div>
+      </main>
+    </div>
+  </body>
+
+  <script src="JavaScript/main.js"></script>
+</html>
